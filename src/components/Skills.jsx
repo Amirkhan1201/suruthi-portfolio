@@ -11,7 +11,7 @@ export default function Skills() {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <SectionHead index="03" kicker="skills" title={<>The toolkit<span className="grad"> behind the green builds.</span></>} />
+        <SectionHead index="03" kicker="skills" title={<>Tools I test<br /><span className="grad">with every day.</span></>} />
         <div className="bento">
           {skills.map((s, i) => (
             <Reveal key={s.group} delay={(i % 3) * 0.08} spot className={`glass skill skill--${i} ${s.highlight ? 'skill--hl' : ''}`}>

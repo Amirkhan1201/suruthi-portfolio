@@ -48,7 +48,7 @@ export default function Experience() {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <SectionHead index="02" kicker="experience" title={<>Three teams.<br /><span className="grad">Zero shortcuts.</span></>} />
+        <SectionHead index="02" kicker="experience" title={<>Where I've<br /><span className="grad">shipped quality.</span></>} />
         <div className="timeline" ref={ref}>
           <div className="timeline__line"><motion.span style={{ scaleY }} /></div>
           {experience.map((j, i) => <Job key={j.company} job={j} idx={i} />)}

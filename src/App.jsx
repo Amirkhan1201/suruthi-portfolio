@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, MotionConfig } from 'framer-motion'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -10,6 +10,8 @@ import Skills from './components/Skills'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import { profile } from './data'
+
+const YEAR = new Date().getFullYear()
 
 function CursorGlow() {
   useEffect(() => {
@@ -22,13 +24,18 @@ function CursorGlow() {
 }
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
-  const done = useCallback(() => setLoading(false), [])
+  const [loading, setLoading] = useState(() => {
+    try { return !sessionStorage.getItem('preloaded') } catch { return true }
+  })
+  const done = useCallback(() => {
+    try { sessionStorage.setItem('preloaded', '1') } catch { /* storage unavailable */ }
+    setLoading(false)
+  }, [])
 
   useEffect(() => { document.body.style.overflow = loading ? 'hidden' : '' }, [loading])
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <AnimatePresence>{loading && <Preloader key="pre" onDone={done} />}</AnimatePresence>
       <CursorGlow />
       <div className="noise" aria-hidden="true" />
@@ -44,10 +51,10 @@ export default function App() {
       </main>
       <footer className="footer">
         <div className="container footer__inner">
-          <span>© {new Date().getFullYear()} {profile.name}. Designed & tested with care.</span>
+          <span>© {YEAR} {profile.name}. Designed & tested with care.</span>
           <span className="mono accent">$ exit 0 — all checks passed</span>
         </div>
       </footer>
-    </>
+    </MotionConfig>
   )
 }

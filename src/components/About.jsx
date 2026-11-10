@@ -31,7 +31,7 @@ function Compare() {
       <div>
         <span className="mono kicker-sm">// impact</span>
         <h3>Regression went from <span className="strike">2 days</span> to <span className="grad">4.5 hours</span>.</h3>
-        <p>Jenkins CI/CD pipelines now run the regression suite on every build with Allure reporting — supporting two production releases every month.</p>
+        <p>Jenkins CI/CD pipelines now run the regression suite on every build with Allure reporting, supporting two production releases every month.</p>
       </div>
       <div className="compare__bars" ref={ref}>
         <div className="bar-row">
@@ -59,7 +59,7 @@ export default function About() {
           <Reveal className="about__text">
             <p>
               I'm a <b>Software Test Engineer at Property Automate</b>, where I architected the UI and API automation frameworks for
-              <b> PropGoto</b> — a prop-tech rental and listing platform — taking it from the first page object to <b>800+ automated tests</b>.
+              <b> PropGoto</b>, a prop-tech rental and listing platform, growing coverage to <b>800+ automated tests</b>.
             </p>
             <p>
               My toolkit is <b>Python</b> with <b>Playwright, Selenium WebDriver, Behave BDD</b> and <b>Requests</b>, backed by

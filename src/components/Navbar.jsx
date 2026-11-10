@@ -43,7 +43,7 @@ export default function Navbar() {
             ))}
           </nav>
           <a href={profile.resume} download className="btn btn--sm btn--accent nav__cta">Resume ↓</a>
-          <button className={`nav__toggle ${open ? 'is-open' : ''}`} aria-label="Menu" onClick={() => setOpen((o) => !o)}>
+          <button className={`nav__toggle ${open ? 'is-open' : ''}`} aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
             <span /><span />
           </button>
         </div>

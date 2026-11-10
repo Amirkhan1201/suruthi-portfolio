@@ -7,10 +7,8 @@ export const profile = {
   email: 'suruthi2817@gmail.com',
   linkedin: 'https://linkedin.com/in/suruthisaravanan',
   linkedinLabel: 'in/suruthisaravanan',
-  photo: '/suruthi.jpg',
+  photo: '/suruthi-cutout.webp',
   resume: '/Suruthi_S_SDET_Resume.pdf',
-  summary:
-    'SDET with nearly 4 years of experience in test automation and quality engineering for prop-tech, banking and enterprise applications. I build automation frameworks from scratch in Python, own end-to-end testing of microservices from planning to release sign-off, mentor junior engineers, and am prototyping AI-assisted test automation.',
 }
 
 export const roles = ['SDET', 'QA Automation Engineer', 'Playwright + Python', 'API & BDD Testing']

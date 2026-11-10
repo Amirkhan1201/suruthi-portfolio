@@ -66,8 +66,6 @@ export default function Hero({ ready }) {
     my.set(e.clientY / window.innerHeight - 0.5)
   }
 
-  const anim = ready ? 'show' : 'hide'
-
   return (
     <section className="hero" id="top" onMouseMove={onMove}>
       <div className="hero__bg">
@@ -77,7 +75,7 @@ export default function Hero({ ready }) {
       <div className="container hero__grid">
         <div className="hero__text">
           <motion.div className="pill" initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }}>
-            <span className="pill__dot" /> Available for SDET roles · {profile.location}
+            <span className="pill__dot" /> Open to SDET opportunities · {profile.location}
           </motion.div>
 
           <h1 className="hero__name" aria-label="Suruthi S">
@@ -102,8 +100,8 @@ export default function Hero({ ready }) {
           </motion.p>
 
           <motion.p className="hero__lede" initial={{ opacity: 0, y: 16 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.9 }}>
-            I build test automation frameworks from scratch and own quality end to end — from test planning to release sign-off — for
-            <b> prop-tech, banking</b> and <b>enterprise</b> products.
+            SDET with nearly 4 years of experience automating web and API testing using <b>Python, Playwright</b> and <b>Selenium</b>.
+            I help teams release faster with fewer bugs.
           </motion.p>
 
           <motion.div className="hero__cta" initial={{ opacity: 0, y: 16 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: 1.0 }}>
@@ -132,7 +130,7 @@ export default function Hero({ ready }) {
           </motion.div>
 
           <motion.img
-            src="/suruthi-cutout.webp"
+            src={profile.photo}
             alt="Suruthi S"
             className="hero__photo"
             style={{ x: photoX, y: photoY }}
