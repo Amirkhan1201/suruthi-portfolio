@@ -117,6 +117,7 @@ export default function Hero({ ready }) {
         </div>
 
         <div className="hero__visual">
+          <div className="hero__stage">
           <motion.div className="ring" style={{ x: ringX, y: ringY }} initial={{ scale: 0.6, opacity: 0 }} animate={ready ? { scale: 1, opacity: 1 } : {}} transition={{ delay: 0.3, duration: 1.1, ease: [0.2, 0.8, 0.2, 1] }}>
             <div className="ring__conic" />
             <div className="ring__inner" />
@@ -139,13 +140,14 @@ export default function Hero({ ready }) {
             transition={{ delay: 0.5, duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
           />
 
-          <motion.div className="hero__card" style={{ x: cardX, y: cardY }} initial={{ opacity: 0, x: -40 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: 1.2, duration: 0.8 }}>
-            <RunCard />
-          </motion.div>
-
           <motion.div className="glass hero__badge" initial={{ opacity: 0, scale: 0.8 }} animate={ready ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 1.4, type: 'spring' }}>
             <span className="hero__badge-big grad">2d → 4.5h</span>
             <span>regression time</span>
+          </motion.div>
+          </div>
+
+          <motion.div className="hero__card" style={{ x: cardX, y: cardY }} initial={{ opacity: 0, x: -40 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: 1.2, duration: 0.8 }}>
+            <RunCard />
           </motion.div>
         </div>
       </div>
